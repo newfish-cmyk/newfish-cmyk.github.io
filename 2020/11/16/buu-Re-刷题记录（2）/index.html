@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg">
 <meta property="og:image" content="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg">
 <meta property="article:published_time" content="2020-11-16T00:17:41.000Z">
-<meta property="article:modified_time" content="2020-11-16T01:05:47.235Z">
+<meta property="article:modified_time" content="2020-11-16T01:13:55.827Z">
 <meta property="article:author" content="知鱼">
 <meta property="article:tag" content="CTF">
 <meta property="article:tag" content="buu">
@@ -196,7 +196,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-16 08:17:41 / 修改时间：09:05:47" itemprop="dateCreated datePublished" datetime="2020-11-16T08:17:41+08:00">2020-11-16</time>
+              <time title="创建时间：2020-11-16 08:17:41 / 修改时间：09:13:55" itemprop="dateCreated datePublished" datetime="2020-11-16T08:17:41+08:00">2020-11-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -303,7 +303,7 @@ for i in range(0,len(s)):
 
 print(base64.b64decode(x))</code></pre>
 <p>跑出flag<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cac6b18d627113a5147d.jpg"><img src="https://pic.downk.cc/item/5fb1cac6b18d627113a5147d.jpg"></a></p>
-<h1 id="不一样的flag"><a href="#不一样的flag" class="headerlink" title="不一样的flag"></a>不一样的flag</h1><p>首先运行了程序<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cebcb18d627113a5b12e.jpg"><img src="https://pic.downk.cc/item/5fb1cebcb18d627113a5b12e.jpg"></a><br>这个上下左右很有走迷宫的嫌疑<br>同样打开后找到关键代码<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cc62b18d627113a55875.jpg"><img src="https://pic.downk.cc/item/5fb1cc62b18d627113a55875.jpg"></a><br>转char后得到#<br>回想到起初运行的猜测和刚刚查找字符串时看到*11110100001010000101111#，根据做题经验是个迷宫了<br><em>是起点，#是终点，关键在于如何分布地图以及路线如何<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg"><img src="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg"></a><br>这段说明v1，v2都要在0~4，也就是说地图是5</em>5<br>*1111<br>01000<br>01010<br>00010<br>1111#<br>再可以看到<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg"><img src="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg"></a><br>转换为字符串即1是墙<br>所以flag{222441144222}，得到flag<br>附元素偏移的代码：</p>
+<h1 id="不一样的flag"><a href="#不一样的flag" class="headerlink" title="不一样的flag"></a>不一样的flag</h1><p>首先运行了程序<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cebcb18d627113a5b12e.jpg"><img src="https://pic.downk.cc/item/5fb1cebcb18d627113a5b12e.jpg"></a><br>这个上下左右很有走迷宫的嫌疑<br>同样打开后找到关键代码<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cc62b18d627113a55875.jpg"><img src="https://pic.downk.cc/item/5fb1cc62b18d627113a55875.jpg"></a><br>转char后得到#<br>回想到起初运行的猜测和刚刚查找字符串时看到&#42;11110100001010000101111#，根据做题经验是个迷宫了<br>&#42;是起点，#是终点，关键在于如何分布地图以及路线如何<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg"><img src="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg"></a><br>这段说明v1，v2都要在0~4，也就是说地图是5*5<br>*1111<br>01000<br>01010<br>00010<br>1111#<br>再可以看到<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg"><img src="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg"></a><br>转换为字符串即1是墙<br>所以flag{222441144222}，得到flag<br>附元素偏移的代码：</p>
 <pre><code>if ( v3 == 2 )
     &#123;
     ++v1;
