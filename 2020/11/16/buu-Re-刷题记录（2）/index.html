@@ -22,34 +22,31 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="作为刚刚接触ctf时做的题，确实是引路的好题（网络wp比较详细）">
+  <meta name="description" content="想打pwn，打完这八题就去打pwn（花指令有点难搞">
 <meta property="og:type" content="article">
-<meta property="og:title" content="攻防世界web新手区刷题记录">
-<meta property="og:url" content="http://example.com/2020/10/26/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="buu-Re-刷题记录（2）">
+<meta property="og:url" content="http://example.com/2020/11/16/buu-Re-%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/index.html">
 <meta property="og:site_name" content="HeHeのr">
-<meta property="og:description" content="作为刚刚接触ctf时做的题，确实是引路的好题（网络wp比较详细）">
+<meta property="og:description" content="想打pwn，打完这八题就去打pwn（花指令有点难搞">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2020/10/26/bhEGeWKVadTHtN5.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/26/fi4Z3sjglyDCUEA.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/26/6qcwpWudHj2ZPJT.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/26/rJD8Qsujc1hNlpv.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/27/Z6WSrQ9GUwzNkV8.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/27/7u3GiMnQwFHboSJ.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/29/27lWJTUdimyVCwG.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/29/JMW9rNhw1zceDHX.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/29/UraEYRjGmuoWBb8.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/29/ClKiuvh2xQALW4S.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/29/fRQEaMdJ2T1C3pi.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/29/7kx1V8XecOUEvKr.png">
-<meta property="article:published_time" content="2020-10-26T13:55:25.000Z">
-<meta property="article:modified_time" content="2020-11-14T13:31:06.195Z">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1c60bb18d627113a45d31.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1c694b18d627113a46f65.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1c789b18d627113a49033.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1ca71b18d627113a507ea.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1cac6b18d627113a5147d.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1cebcb18d627113a5b12e.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1cc62b18d627113a55875.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg">
+<meta property="article:published_time" content="2020-11-16T00:17:41.000Z">
+<meta property="article:modified_time" content="2020-11-16T01:05:47.235Z">
 <meta property="article:author" content="知鱼">
 <meta property="article:tag" content="CTF">
-<meta property="article:tag" content="攻防世界">
+<meta property="article:tag" content="buu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/10/26/bhEGeWKVadTHtN5.png">
+<meta name="twitter:image" content="https://pic.downk.cc/item/5fb1c60bb18d627113a45d31.jpg">
 
-<link rel="canonical" href="http://example.com/2020/10/26/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">
+<link rel="canonical" href="http://example.com/2020/11/16/buu-Re-%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -62,7 +59,7 @@
   };
 </script>
 
-  <title>攻防世界web新手区刷题记录 | HeHeのr</title>
+  <title>buu-Re-刷题记录（2） | HeHeのr</title>
   
 
 
@@ -175,7 +172,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/26/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/16/buu-Re-%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar1.gif">
@@ -188,7 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          攻防世界web新手区刷题记录
+          buu-Re-刷题记录（2）
         </h1>
 
         <div class="post-meta">
@@ -197,16 +194,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-10-26 21:55:25" itemprop="dateCreated datePublished" datetime="2020-10-26T21:55:25+08:00">2020-10-26</time>
+              <time title="创建时间：2020-11-16 08:17:41 / 修改时间：09:05:47" itemprop="dateCreated datePublished" datetime="2020-11-16T08:17:41+08:00">2020-11-16</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 21:31:06" itemprop="dateModified" datetime="2020-11-14T21:31:06+08:00">2020-11-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -228,23 +219,115 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>作为刚刚接触ctf时做的题，确实是引路的好题（网络wp比较详细）</p>
+        <p>想打pwn，打完这八题就去打pwn（花指令有点难搞</p>
 <a id="more"></a>
-<h1 id="view-source"><a href="#view-source" class="headerlink" title="view_source"></a>view_source</h1><p>没什么难点，算签到题直接f12<br><img src="https://i.loli.net/2020/10/26/bhEGeWKVadTHtN5.png" alt="view sourse.png"><br>获得flag</p>
-<h1 id="robots"><a href="#robots" class="headerlink" title="robots"></a>robots</h1><p>考察Robots协议，直接构造<br><img src="https://i.loli.net/2020/10/26/fi4Z3sjglyDCUEA.png" alt="robots.png"><br>发现flag所在的php</p>
-<h1 id="backup"><a href="#backup" class="headerlink" title="backup"></a>backup</h1><p>需要考察备份文件<br>常见的备份文件后缀名有 .git .svn .swp .~ .bak .bash_history<br>逐一尝试后发现是.bak<br><img src="https://i.loli.net/2020/10/26/6qcwpWudHj2ZPJT.png" alt="bak.png"><br>获得txt文件打开获得flag<br><img src="https://i.loli.net/2020/10/26/rJD8Qsujc1hNlpv.png" alt="bakflag.png"></p>
-<h1 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h1><p>题目问夹心饼干（bushi<br>直接看cookie看不到东西<br>于是访问cookie.php，发现题目要求看response就合理了起来<br>f12获得flag<br><img src="https://i.loli.net/2020/10/27/Z6WSrQ9GUwzNkV8.png" alt="cookie.png"></p>
-<h1 id="disabled-button"><a href="#disabled-button" class="headerlink" title="disabled_button"></a>disabled_button</h1><p>按钮按不动，不知道怎么办就f12<br>发现源代码异样，删去disabled发现就能按了<br><img src="https://i.loli.net/2020/10/27/7u3GiMnQwFHboSJ.png" alt="button.png"></p>
-<h1 id="weak-auth"><a href="#weak-auth" class="headerlink" title="weak_auth"></a>weak_auth</h1><p>（爆破初尝试）<br>弱口令密码，先尝试能不能用万能密码绕过<br>发现要求以admin登录<br><img src="https://i.loli.net/2020/10/29/27lWJTUdimyVCwG.png" alt="weakauth.png"><br>所以选择用户名为admin，再对密码进行弱口令爆破<br>下面写的详细一点<br>首先用户名admin密码随便输入1213抓包（便于查找参数）<br>获得<br><img src="https://i.loli.net/2020/10/29/JMW9rNhw1zceDHX.png" alt="weakauth1.png"><br>然后右键send to intruder<br><img src="https://i.loli.net/2020/10/29/UraEYRjGmuoWBb8.png" alt="weakauth2.png"><br>再设置目标host和port<br><img src="https://i.loli.net/2020/10/29/ClKiuvh2xQALW4S.png" alt="weakauth3.png"><br>clear后选取add password进行破解，选取pitchfork<br><img src="https://i.loli.net/2020/10/29/fRQEaMdJ2T1C3pi.png" alt="weakauth4.png"></p>
-<pre><code>sniper – 对变量依次进行暴力破解。
+<h1 id="Reverse3"><a href="#Reverse3" class="headerlink" title="Reverse3"></a>Reverse3</h1><p>照例下载文件检查发现无壳32位<br>ida打开找到关键函数<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1c60bb18d627113a45d31.jpg"><img src="https://pic.downk.cc/item/5fb1c60bb18d627113a45d31.jpg"></a><br>发现其if里是个空函数，于是陷入困境<br>寻求lxk大佬和jj大佬帮助后，得知ida的反编译存在一定猜的成分（成分很大<br>于是不需要特别肝地读完整个程序，重新整体审计发现一处<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1c694b18d627113a46f65.jpg"><img src="https://pic.downk.cc/item/5fb1c694b18d627113a46f65.jpg"></a><br>其中v2是输入的flag经过逐位变换获得的<br>同样在上方又找到输入处的加密<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1c789b18d627113a49033.jpg"><img src="https://pic.downk.cc/item/5fb1c789b18d627113a49033.jpg"></a><br>跟踪sub_4110BE，得到巨长一段</p>
+<pre><code>int __cdecl sub_411AB0(char *a1, unsigned int a2, _DWORD *a3)
+&#123;
+int v4; // [sp+Ch] [bp-100h]@1
+int v5; // [sp+D4h] [bp-38h]@7
+int i; // [sp+E0h] [bp-2Ch]@7
+int v7; // [sp+ECh] [bp-20h]@1
+void *Dst; // [sp+F8h] [bp-14h]@1
+char *v9; // [sp+104h] [bp-8h]@1
 
-battering ram – 对变量同时进行破解。
+memset(&amp;v4, 0xCCu, 0x100u);
+v9 = 0;
+Dst = 0;
+v7 = 0;
+if ( a1 &amp;&amp; a2 )
+&#123;
+    v7 = a2 / 3;
+    if ( (signed int)(a2 / 3) % 3 )
+    ++v7;
+    v7 *= 4;
+    *a3 = v7;
+    malloc(v7 + 1);
+    Dst = (void *)sub_411127();
+    if ( Dst )
+    &#123;
+    j_memset(Dst, 0, v7 + 1);
+    v9 = a1;
+    v7 = a2;
+    i = 0;
+    v5 = 0;
+    while ( v7 &gt; 0 )
+    &#123;
+        byte_41A144[2] = 0;
+        byte_41A144[1] = 0;
+        byte_41A144[0] = 0;
+        for ( i = 0; i &lt; 3 &amp;&amp; v7 &gt;= 1; ++i )
+        &#123;
+        byte_41A144[i] = *v9;
+        --v7;
+        ++v9;
+        &#125;
+        if ( !i )
+        break;
+        v4 = i;
+        if ( i == 1 )
+        &#123;
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[(signed int)(unsigned __int8)byte_41A144[0] &gt;&gt; 2];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[((byte_41A144[1] &amp; 0xF0) &gt;&gt; 4) | 16 * (byte_41A144[0] &amp; 3)];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[64];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[64];
+        &#125;
+        else if ( v4 == 2 )
+        &#123;
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[(signed int)(unsigned __int8)byte_41A144[0] &gt;&gt; 2];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[((byte_41A144[1] &amp; 0xF0) &gt;&gt; 4) | 16 * (byte_41A144[0] &amp; 3)];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[((byte_41A144[2] &amp; 0xC0) &gt;&gt; 6) | 4 * (byte_41A144[1] &amp; 0xF)];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[64];
+        &#125;
+        else if ( v4 == 3 )
+        &#123;
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[(signed int)(unsigned __int8)byte_41A144[0] &gt;&gt; 2];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[((byte_41A144[1] &amp; 0xF0) &gt;&gt; 4) | 16 * (byte_41A144[0] &amp; 3)];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[((byte_41A144[2] &amp; 0xC0) &gt;&gt; 6) | 4 * (byte_41A144[1] &amp; 0xF)];
+        *((_BYTE *)Dst + v5++) = aAbcdefghijklmn[byte_41A144[2] &amp; 0x3F];
+        &#125;
+    &#125;
+    *((_BYTE *)Dst + v5) = 0;
+    &#125;
+&#125;
+return sub_411127();</code></pre>
+<p>可以推断出是由三个字符变成了四个字符，还有一大堆4、16、64什么的，推断是base64<br>查看一下aAbcdefghijklmn<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1ca71b18d627113a507ea.jpg"><img src="https://pic.downk.cc/item/5fb1ca71b18d627113a507ea.jpg"></a><br>好嘛，base64没跑了<br>于是根据逻辑编写脚本</p>
+<pre><code>import base64
 
-pitchfork – 每一个变量标记对应一个字典，一一对应进行破解。
+s = &quot;e3nifIH9b_C@n@dH&quot;
 
-cluster bomb – 每个变量对应一个字典，并且进行交叉式破解，尝试各种组合。适用于用户名+密码的破解。</code></pre>
-<p>加载密码字典<br><img src="https://i.loli.net/2020/10/29/7kx1V8XecOUEvKr.png" alt="weakauth5.png"></p>
-<p>获得密码123456<br>登录获得flag</p>
+x = &quot;&quot;
+
+for i in range(0,len(s)):
+    x += chr(ord(s[i]) - i)
+
+print(base64.b64decode(x))</code></pre>
+<p>跑出flag<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cac6b18d627113a5147d.jpg"><img src="https://pic.downk.cc/item/5fb1cac6b18d627113a5147d.jpg"></a></p>
+<h1 id="不一样的flag"><a href="#不一样的flag" class="headerlink" title="不一样的flag"></a>不一样的flag</h1><p>首先运行了程序<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cebcb18d627113a5b12e.jpg"><img src="https://pic.downk.cc/item/5fb1cebcb18d627113a5b12e.jpg"></a><br>这个上下左右很有走迷宫的嫌疑<br>同样打开后找到关键代码<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1cc62b18d627113a55875.jpg"><img src="https://pic.downk.cc/item/5fb1cc62b18d627113a55875.jpg"></a><br>转char后得到#<br>回想到起初运行的猜测和刚刚查找字符串时看到*11110100001010000101111#，根据做题经验是个迷宫了<br><em>是起点，#是终点，关键在于如何分布地图以及路线如何<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg"><img src="https://pic.downk.cc/item/5fb1ce30b18d627113a59d8d.jpg"></a><br>这段说明v1，v2都要在0~4，也就是说地图是5</em>5<br>*1111<br>01000<br>01010<br>00010<br>1111#<br>再可以看到<br><a target="_blank" rel="noopener" href="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg"><img src="https://pic.downk.cc/item/5fb1ce81b18d627113a5a8d4.jpg"></a><br>转换为字符串即1是墙<br>所以flag{222441144222}，得到flag<br>附元素偏移的代码：</p>
+<pre><code>if ( v3 == 2 )
+    &#123;
+    ++v1;
+    &#125;
+    else if ( v3 &gt; 2 )
+    &#123;
+    if ( v3 == 3 )
+    &#123;
+        --v2;
+    &#125;
+    else
+    &#123;
+        if ( v3 != 4 )
+LABEL_13:
+        exit(1);
+        ++v2;
+    &#125;
+    &#125;
+    else
+    &#123;
+    if ( v3 != 1 )
+        goto LABEL_13;
+    --v1;
+    &#125;</code></pre>
 
     </div>
 
@@ -255,7 +338,7 @@ cluster bomb – 每个变量对应一个字典，并且进行交叉式破解，
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/CTF/" rel="tag"># CTF</a>
-              <a href="/tags/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/" rel="tag"># 攻防世界</a>
+              <a href="/tags/buu/" rel="tag"># buu</a>
           </div>
 
         
@@ -264,13 +347,10 @@ cluster bomb – 每个变量对应一个字典，并且进行交叉式破解，
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/23/0xGame-%E7%AC%AC%E4%B8%89%E5%91%A8/" rel="prev" title="0xGame-第三周">
-      <i class="fa fa-chevron-left"></i> 0xGame-第三周
+    <a href="/2020/11/14/buuRE%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="prev" title="buu-RE-刷题记录(1)">
+      <i class="fa fa-chevron-left"></i> buu-RE-刷题记录(1)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/10/31/0xGame%E6%80%BB%E7%BB%93/" rel="next" title="0xGame总结">
-      0xGame总结 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -329,7 +409,7 @@ cluster bomb – 每个变量对应一个字典，并且进行交叉式破解，
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#view-source"><span class="nav-text">view_source</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#robots"><span class="nav-text">robots</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#backup"><span class="nav-text">backup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookie"><span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#disabled-button"><span class="nav-text">disabled_button</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#weak-auth"><span class="nav-text">weak_auth</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse3"><span class="nav-text">Reverse3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84flag"><span class="nav-text">不一样的flag</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
